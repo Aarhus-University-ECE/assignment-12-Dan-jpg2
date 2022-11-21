@@ -1,5 +1,5 @@
 extern "C"{
-#include "duration.hpp"
+#include "duration.cpp"
 }
 // File for sandboxing and trying out code
 int main(int argc, char **argv)

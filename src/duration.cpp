@@ -1,6 +1,7 @@
-#include duration.cpp
-#include <iostream>
+#include "duration.hpp"
+#include <unistd.h>
 #include <assert.h>
+
 
 Duration::Duration() { //Setting time to zero
     time = 0;

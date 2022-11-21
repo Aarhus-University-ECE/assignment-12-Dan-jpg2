@@ -1,5 +1,5 @@
-#ifndef __Duration_h_
-#define __Duration_h_
+#ifndef __Duration_hpp_
+#define __Duration_hpp_
 #include <stdbool.h>
 
 class Duration {
