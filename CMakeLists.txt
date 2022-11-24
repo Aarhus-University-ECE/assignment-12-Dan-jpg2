@@ -8,11 +8,11 @@ set(CMAKE_CXX_STANDARD 14)
 # for example like this:
 # add_library(mylib src/max.cpp src/swap.cpp src/max_sum.cpp)
 include_directories(include)
-add_library(mylib src/duration.hpp)
+add_library(mylib src/duration.cpp)
 target_include_directories(mylib PUBLIC include)
 
 # define executable named main for experimenting and debugging code
-add_executable(main src/main.c)
+add_executable(main src/main.cpp)
 target_compile_options(main PUBLIC -g -O0)
 target_link_libraries(main mylib)
 

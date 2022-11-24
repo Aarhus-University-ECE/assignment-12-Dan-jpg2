@@ -12,30 +12,30 @@ extern "C++"{
 TEST_CASE("Duration is initialized to 0") {
     
     Duration d;
-    REQUIRE(d.getDuration() == 0);
+    REQUIRE(d.GetDuration() == 0);
+    d.~Duration();
     
-    d.setTime(5);
-    REQUIRE(d.getDuration() == 5);
+    d = Duration(5);
+    REQUIRE(d.GetDuration() == 5);
+    d.~Duration();
 
-    d.resetTime();
-    REQUIRE(d.getDuration() == 0);
+   // d.resetTime();
+    //REQUIRE(d.getDuration() == 0);
 
+    d = Duration();
     d.tick();
-    REQUIRE(d.getDuration() == 1);
+    REQUIRE(d.GetDuration() == 1);
 
     d.tick(3);
-    REQUIRE(d.getDuration() == 4);
+    REQUIRE(d.GetDuration() == 4);
 
     //testcase where alarm is 1 second away.
-    d.setAlarm(5);
+    d.SetAlarm(5);
     REQUIRE(d.tick() == false);
-    REQUIRE(d.checkAlarm()==true);
 
     REQUIRE(d.tick() == true);
-    REQUIRE(d.checkAlarm()==false);
 
-    d.setAlarm(100);
+    d.SetAlarm(100);
     REQUIRE(d.tick() == false);
-
     
 }

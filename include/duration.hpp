@@ -1,5 +1,5 @@
-#ifndef __Duration_hpp_
-#define __Duration_hpp_
+#ifndef _DURATION_CLASS_HPP_
+#define _DURATION_CLASS_HPP_
 #include <stdbool.h>
 
 class Duration {
@@ -14,13 +14,12 @@ class Duration {
     public:
 
         Duration();
-        void SetTime(int t);
+        Duration(int t);
+        ~Duration();
         int GetDuration();
-        void reset();
         bool tick();
         bool tick(int dt);
-        void SetAlarm();
-        bool CheckAlarm();
+        void SetAlarm(int t);
 };
 
 #endif 

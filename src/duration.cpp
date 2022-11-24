@@ -3,12 +3,15 @@
 #include <assert.h>
 
 
-Duration::Duration() { //Setting time to zero
+Duration::Duration() { //Setting time to zero (Constructor)
     time = 0;
 }
 
+Duration::~Duration(){ //Destructor
+
+}
 //Set value to n'th number over zero
-void Duration::SetTime(int t){
+Duration::Duration(int t){
     assert(t>=0);
     time = t;
 }
@@ -17,12 +20,8 @@ int Duration::GetDuration(){ //Returning private attribute
     return time;
 }
 
-void Duration::Reset(){ //Resetting time to zero
-    time = 0;
-}
-
 bool Duration::tick(){ //Increasing time with 1 as one second
-    tick++=;
+    time++;
     return CheckAndUpdate();
 }
 
@@ -34,14 +33,10 @@ bool Duration::tick(int dt){
     return CheckAndUpdate();
 }
 
-void Duration::SetAlarm(){ //Setting up the time for the alarm and setting private attribute of isset to true
+void Duration::SetAlarm(int t){ //Setting up the time for the alarm and setting private attribute of isset to true
     assert(t>time);
     AlarmIsSet=true;
     alarm=t;
-}
-
-bool Duration::CheckAlarm(){ //Own function to check if the alarm has been set
-    return AlarmIsSet;
 }
 
 bool Duration::CheckAndUpdate(){ //Checking if time has been surpassed alarm if the alarm was set with AlarmIsSet
